@@ -1,0 +1,29 @@
+<!-- CUERPO DEL EJERCICIO -->
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Nuevo objeto</h1>
+      </div>      
+      <div class="col-12 d-flex resultado justify-content-center align-items-center">
+        <form method="post" action="/objetos/guardar" enctype="multipart/form-data" style="display:grid">
+          Escribe tu objeto:
+          <input name="nombre" id="nombre" placeholder="nombre" value="{{nombre}}">
+          <input name="telefono" id="telefono" placeholder="telefono" value="{{telefono}}">
+          <input name="titulo" id="titulo" placeholder="titulo" value="{{titulo}}">
+          <input name="descripcion" id="descripcion" placeholder="descripcion" value="{{descripcion}}">
+          <input type="file" name="foto" id="foto" accept="image/gif, image/jpeg, image/png">
+          <input type="submit" class="btn btn-primary" value="Guardar">
+        </form>
+      </div>
+    </div>
+    {{#if errores}}
+    <div class="row">
+      <div class="col-12">
+        {{#each errores}}
+        <p>{{error}}</p>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+</main>
